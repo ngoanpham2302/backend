@@ -7,6 +7,20 @@ Nếu có kiểm tra xem đó là tam giác gì? */
 import java.util.Scanner;
 
 public class Triangle {
+    static boolean isTriangle(double a, double b, double c) {
+        return (a + b > c && a + c > b && b + c > a);
+    }
+
+    static boolean isRightTriangle(double a, double b, double c) {
+        return (a * a + b * b == c * c || a * a + c * c == b * b
+                || b * b + c * c == a * a);
+    }
+
+    static boolean isObtuseTriangle(double a, double b, double c) {
+        return (a * a + b * b < c * c || a * a + c * c < b * b
+                || b * b + c * c < a * a);
+    }
+
     public static void checkTypes() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập cạnh a: ");
@@ -16,21 +30,18 @@ public class Triangle {
         System.out.println("Nhập cạnh c: ");
         double c = sc.nextDouble();
 
-        boolean isRightTriangle = a * a + b * b == c * c || a * a + c * c == b * b
-                || b * b + c * c == a * a;
-
-        if (a + b > c && a + c > b && b + c > a) {
+        if (isTriangle(a, b, c)) {
             if (a == b && b == c) {
                 System.out.println("a, b, c tạo thành một tam giác đều");
             } else if (a == b || a == c || b == c) {
-                if (isRightTriangle) {
+                if (isRightTriangle(a, b, c)) {
                     System.out.println("a, b, c tạo thành một tam giác vuông cân");
                 } else {
                     System.out.println("a, b, c tạo thành một tam giác cân");
                 }
-            } else if (isRightTriangle) {
+            } else if (isRightTriangle(a, b, c)) {
                 System.out.println("a, b, c tạo thành một tam giác vuông");
-            } else if (a * a + b * b < c * c || a * a + c * c < b * b || b * b + c * c < a * a) {
+            } else if (isObtuseTriangle(a, b, c)) {
                 System.out.println("a, b, c tạo thành một tam giác tù");
             } else {
                 System.out.println("a, b, c tạo thành một tam giác nhọn");
