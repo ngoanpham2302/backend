@@ -14,7 +14,7 @@ public class Main {
 
         // Câu 3: Tìm từ dài nhất trong chuỗi: "Không có gì quý hơn độc lập tự do"
         System.out.println("Câu 3: ");
-        String inputStr = "Không có gì quý hơn độc lập tự do ";
+        String inputStr = "Không có gì quý hơn độc lập tự do";
         String resultWord = ThirdExercise.findLongestWord(inputStr);
         System.out.println(resultWord);
     }
