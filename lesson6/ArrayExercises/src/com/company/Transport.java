@@ -5,7 +5,6 @@ package com.company;
 import java.util.Scanner;
 
 public class Transport {
-    private static Transport[] transportArr;
     int code;
     String name;
     double maxSpeed;
@@ -22,13 +21,10 @@ public class Transport {
     }
 
     // Nhập dữ liệu
-    static void enterInput() {
+    static void enterInput(Transport[] arr) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập số lượng phần tử trong mảng phương tiện giao thông: ");
-        int len = sc.nextInt();
-        transportArr = new Transport[len];
 
-        for (int i = 0; i < len; i++) {
+        for (int i = 0; i < arr.length; i++) {
             System.out.printf("Nhập thông tin phương tiện thứ %d: \n", i + 1);
             System.out.println("Mã số phương tiện (nhập số nguyên): ");
             int code = sc.nextInt();
@@ -39,15 +35,19 @@ public class Transport {
 
             System.out.println("Vận tốc tối đa (km/h): ");
             double maxSpeed = sc.nextDouble();
+            if (maxSpeed <= 0) {
+                System.out.println("Vận tốc phải lớn hơn 0. Vui lòng nhập lại: ");
+                maxSpeed = sc.nextDouble();
+            }
 
             Transport transport = new Transport(code, name, maxSpeed);
-            transportArr[i] = transport;
+            arr[i] = transport;
         }
     }
 
     // In dữ liệu
-    static void printData() {
-        for (Transport transport : transportArr) {
+    static void printData(Transport[] arr) {
+        for (Transport transport : arr) {
             System.out.println(transport);
         }
     }

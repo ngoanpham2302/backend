@@ -5,48 +5,42 @@ package com.company;
 import java.util.Scanner;
 
 public class NumberArray {
-    private static int[] numberArr;
 
     // Nhập dữ liệu
-    static void enterInput() {
+    static void enterInput(int[] arr) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập số lượng phần tử trong mảng số nguyên: ");
-        int arrLength = sc.nextInt();
-        numberArr = new int[arrLength];
-
-        for (int i = 0; i < arrLength; i++) {
+        for (int i = 0; i < arr.length; i++) {
             System.out.printf("Nhập phần tử có index %d: ", i);
-            int number = sc.nextInt();
-            numberArr[i] = number;
+            arr[i] = sc.nextInt();
         }
     }
 
     // In dữ liệu
-    static void printNumbers() {
-        System.out.println("Mảng số nguyên sau khi nhập: ");
-        for (int number : numberArr) {
+    static void printNumbers(int[] arr) {
+        System.out.println("In mảng số nguyên sau khi nhập: ");
+        for (int number : arr) {
             System.out.print(number + " \t");
         }
         System.out.println();
     }
 
     // Tìm phần tử nhỏ nhất trong mảng
-    static int findMinNumber() {
-        int min = numberArr[0];
-        for (int i = 0; i < numberArr.length; i++) {
-            if (numberArr[i] < min) {
-                min = numberArr[i];
+    static int findMinNumber(int[] arr) {
+        int min = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
             }
         }
         return min;
     }
 
     // Tìm phần tử lớn nhất trong mảng
-    static int findMaxNumber() {
-        int max = numberArr[0];
-        for (int i = 0; i < numberArr.length; i++) {
-            if (numberArr[i] > max) {
-                max = numberArr[i];
+    static int findMaxNumber(int[] arr) {
+        int max = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
             }
         }
         return max;
