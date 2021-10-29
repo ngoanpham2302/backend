@@ -6,15 +6,9 @@ package com.company;
 
 public class ExerciseFour {
     // Đếm số từ trong chuỗi
-    static int countWords(String s) {
-        int count = 0;
-        char ch[] = new char[s.length()];
-        for (int i = 0; i < s.length(); i++) {
-            ch[i] = s.charAt(i);
-            if (((i > 0) && (ch[i] != ' ') && (ch[i - 1] == ' ')) || ((ch[0] != ' ') && (i == 0)))
-                count++;
-        }
-        return count;
+    static int countWords(String str) {
+        String[] strArray = str.split(" ");
+        return strArray.length;
     }
 
     // Đếm và in ra index của các ký tự o;

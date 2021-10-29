@@ -31,21 +31,21 @@ public class Main {
         System.out.println("Vui lòng nhập chuỗi cần kiểm tra Palindrome: ");
         String inputStr = sc.nextLine();
         boolean isPalindrome = ExerciseTwo.isPalindromeString(inputStr);
-        String palindResult = isPalindrome ? inputStr + " là chuỗi Palindrome" : inputStr + " không phải chuỗi Palindrome";
+        String palindResult = isPalindrome ? "\"" + inputStr + "\" là chuỗi Palindrome"
+                : "\"" + inputStr + "\" không phải chuỗi Palindrome";
         System.out.println(palindResult);
 
         // Bài 3:
         System.out.println("Bài 3: ");
-        System.out.println("\nIn 10 số nguyên tố đầu tiên: ");
+        System.out.println("In 10 số nguyên tố đầu tiên: ");
         ExerciseThree.printTenPrimes(10);
-        System.out.println("\nIn ra các số nguyên tố nhỏ hơn 10: ");
+        System.out.println("\nIn các số nguyên tố nhỏ hơn 10: ");
         ExerciseThree.printPrimesLessThanTen(10);
 
         // Bài 4:
-        System.out.println("Bài 4: ");
+        System.out.println("\nBài 4: ");
         String str = "You only live once, but if you do it right, once is enough";
-        System.out.println("\nTổng số từ có trong chuỗi là: ");
-        System.out.println(ExerciseFour.countWords(str));
+        System.out.println("Tổng số từ có trong chuỗi là: " + ExerciseFour.countWords(str));
         int countResult = ExerciseFour.countChar(str, 'o');
         System.out.println("Số lần xuất hiện của ký tự 'o' trong chuỗi: " + countResult);
 
@@ -74,10 +74,10 @@ public class Main {
         int[][] newArr = new int[row][col];
 
         System.out.println("Nhập các phần tử của mảng: ");
-        ExcerciseSeven.enterInput(newArr);
+        ExerciseSeven.enterInput(newArr);
         System.out.println("Các phần tử trong mảng: ");
-        ExcerciseSeven.printArray(newArr);
+        ExerciseSeven.printArray(newArr);
         System.out.println("Các phần tử nằm trên đường chéo chính: ");
-        ExcerciseSeven.printDiagonalEle(row, col, newArr);
+        ExerciseSeven.printDiagonalEle(row, col, newArr);
     }
 }

@@ -5,8 +5,8 @@ package com.company;
 public class ExerciseOne {
     // Hình vuông
     static void drawSquare(int n) {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
                 System.out.print("*  ");
             }
             System.out.println();
@@ -29,7 +29,7 @@ public class ExerciseOne {
             for (int j = i; j <= n; j++) {
                 System.out.print("  ");
             }
-            for (int j = 1; j <= i; j++) {
+            for (int k = 1; k <= i; k++) {
                 System.out.print("*   ");
             }
             System.out.println();
