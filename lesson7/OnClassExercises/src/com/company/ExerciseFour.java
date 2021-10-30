@@ -7,8 +7,9 @@ package com.company;
 public class ExerciseFour {
     // Đếm số từ trong chuỗi
     static int countWords(String str) {
-        String[] strArray = str.split(" ");
-        return strArray.length;
+        str = str.replaceAll("[\\t\\n\\r]+", " ").replaceAll("\\s+", " ");
+        String[] strArr = str.split(" ");
+        return strArr.length;
     }
 
     // Đếm và in ra index của các ký tự o;
