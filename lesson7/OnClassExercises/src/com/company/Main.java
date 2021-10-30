@@ -79,5 +79,8 @@ public class Main {
         ExerciseSeven.printArray(newArr);
         System.out.println("Các phần tử nằm trên đường chéo chính: ");
         ExerciseSeven.printDiagonalEle(row, col, newArr);
+
+        // Bài 8:
+        ExerciseEight.validatePassword();
     }
 }
