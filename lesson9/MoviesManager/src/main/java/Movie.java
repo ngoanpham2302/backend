@@ -1,9 +1,22 @@
+import com.google.gson.annotations.SerializedName;
+
 public class Movie {
+    @SerializedName("id")
     int id;
+
+    @SerializedName("title")
     String title;
+
+    @SerializedName("genre")
     String genre;
+
+    @SerializedName("length")
     double length;
+
+    @SerializedName("studio")
     String studio;
+
+    @SerializedName("year")
     int year;
 
     public Movie(int id, String title, String genre, double length, String studio, int year) {
