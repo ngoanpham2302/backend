@@ -23,6 +23,6 @@ public class Kitchen extends Employee {
 
     @Override
     public String toString() {
-        return super.toString() + " - Tổng lương: " + formatCurrency(calculatorSalary());
+        return super.toString() + " - Tổng lương: " + super.formatCurrency(calculatorSalary());
     }
 }
