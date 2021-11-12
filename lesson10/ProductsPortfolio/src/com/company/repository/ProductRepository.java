@@ -69,7 +69,7 @@ public class ProductRepository {
             System.out.println("\n--- " + category + " - " + category.getValue() + ": ");
 
             for (Product product : list) {
-                if (product.getCategory() == category) {
+                if (product.getCategory().equals(category)) {
                     System.out.println(product);
                 }
             }
