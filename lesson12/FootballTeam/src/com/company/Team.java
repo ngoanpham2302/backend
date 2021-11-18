@@ -51,12 +51,13 @@ public class Team {
         Random random = new Random();
         ArrayList<Player> mainTeam = new ArrayList<>();
 
+        final int GOAL_KEEPER = 1;
         int goalKeeperQuantity = 0;
         int defenderQuantity = 0;
         int midfieldQuantity = 0;
         int forwarderQuantity = 0;
 
-        while (goalKeeperQuantity < 1) {
+        while (goalKeeperQuantity < GOAL_KEEPER) {
             int randomGkIndex = random.nextInt(23);
             Player rdGoalKeeper = allPlayers.get(randomGkIndex);
             if (rdGoalKeeper.getPosition().equals(Position.GK)) {
