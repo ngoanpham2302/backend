@@ -9,10 +9,11 @@ import java.util.Scanner;
 
 public class PersonalInfo {
     static void checkInfo(String name, String address, int bornYear) throws ArithmeticException {
-        if (bornYear < 1900 || bornYear > 2021) throw new ArithmeticException("Năm sinh không hợp lệ!");
-
         LocalDate currentDate = LocalDate.now();
         int currentYear = currentDate.getYear();
+
+        if (bornYear < 1900 || bornYear > currentYear) throw new ArithmeticException("Năm sinh không hợp lệ!");
+
         int age = currentYear - bornYear;
         if (age >= 18) {
             System.out.println(name + " - " + address + " - " + age + " tuổi: Đã đủ tuổi bầu cử");
