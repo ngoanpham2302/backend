@@ -1,7 +1,7 @@
 package com.company;
 
 public class Kitchen extends Employee {
-    long serviceCharge;
+    private long serviceCharge;
 
     public Kitchen(int id, String name, int age, long basicSalary, long serviceCharge) {
         super(id, name, age, basicSalary);

@@ -3,10 +3,10 @@ package com.company;
 import java.text.DecimalFormat;
 
 public abstract class Employee {
-    int id;
-    String name;
-    int age;
-    long basicSalary;
+    private int id;
+    private String name;
+    private int age;
+    private long basicSalary;
 
     public Employee(int id, String name, int age, long basicSalary) {
         this.id = id;
@@ -56,7 +56,7 @@ public abstract class Employee {
 
     @Override
     public String toString() {
-        return "ID " + id + " - " + name + " - " + age + " tuổi" + " - Lương cơ bản: "
+        return "Mã nhân viên " + id + " - " + name + " - " + age + " tuổi - Lương cơ bản: "
                 + formatCurrency(basicSalary) + " - Tổng lương: " + formatCurrency(calculatorSalary());
     }
 }
