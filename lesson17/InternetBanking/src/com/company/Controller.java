@@ -16,6 +16,17 @@ public class Controller {
         return balanceAmount;
     }
 
+    // Kiểm tra số tài khoản ngân hàng có hợp lệ không
+    public static boolean checkBankAccount(String account) {
+        final String ACCOUNT_REGEX = "\\d{8,16}";
+        if (!account.matches(ACCOUNT_REGEX)) {
+            System.out.println("Số tài khoản thụ hưởng không hợp lệ! Vui lòng nhập lại.");
+            return false;
+        }
+        return true;
+    }
+
+
     // Kiểm tra số tiền cần chuyển có hợp lệ không
     public static boolean checkTransferMoney(long transMoney) {
         if (transMoney > balanceAmount - 50000) {
@@ -33,15 +44,20 @@ public class Controller {
     // Thực hiện chuyển tiền
     public void executeMoneyTransfer() {
         Scanner sc = new Scanner(System.in);
-
+        String beneficiaryAccount = "";
         System.out.println("Mời nhập thông tin giao dịch");
-        System.out.println("Ngân hàng thụ hưởng: ");
-        String beneficiaryBank = sc.nextLine();
-        System.out.println("Số tài khoản thụ hưởng: ");
-        String beneficiaryAccount = sc.nextLine();
+
+        boolean isValidAccount = false;
+        while (!isValidAccount) {
+            System.out.println("Số tài khoản thụ hưởng: ");
+            beneficiaryAccount = sc.nextLine();
+
+            if (checkBankAccount(beneficiaryAccount)) {
+                isValidAccount = true;
+            }
+        }
 
         boolean isValidMoney = false;
-
         while (!isValidMoney) {
             System.out.println("Số tiền chuyển khoản: ");
             long transferAmount = sc.nextLong();
