@@ -6,7 +6,7 @@ public class Movie {
     private String director;
     private String genre;
     private Category category;
-    private int views;
+    private long views;
     private int length;
 
     public Movie(int id, String title, String director, String genre,
@@ -60,7 +60,7 @@ public class Movie {
         this.category = category;
     }
 
-    public int getViews() {
+    public long getViews() {
         return views;
     }
 

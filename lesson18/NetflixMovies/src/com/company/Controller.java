@@ -14,7 +14,7 @@ public class Controller {
     // Lấy ra 3 bộ phim có lượt xem cao nhất
     public void getHighestViewsMovies(int quantity, ArrayList<Movie> list) {
         list.stream()
-                .sorted((o1, o2) -> o2.getViews() - o1.getViews())
+                .sorted((o1, o2) -> (int) (o2.getViews() - o1.getViews()))
                 .limit(quantity)
                 .forEach(System.out::println);
     }
