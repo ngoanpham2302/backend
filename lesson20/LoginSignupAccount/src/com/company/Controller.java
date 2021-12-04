@@ -22,12 +22,12 @@ public class Controller {
 
         switch (choice) {
             case 1:
-                System.out.println("ĐĂNG NHẬP");
+                System.out.println("\nĐĂNG NHẬP");
                 login();
                 break;
 
             case 2:
-                System.out.println("ĐĂNG KÝ");
+                System.out.println("\nĐĂNG KÝ");
                 signup();
                 break;
 
@@ -50,8 +50,8 @@ public class Controller {
         while (!isValidLoginInfo) {
             System.out.println("Nhập username: ");
             username = sc.nextLine();
-            boolean isRightUsername = false;
 
+            boolean isRightUsername = false;
             for (User user : userList) {
                 if (user.getUsername().equals(username)) {
                     isRightUsername = true;
@@ -76,6 +76,7 @@ public class Controller {
 
     // Đăng nhập thành công
     public void successfulLogin() {
+        System.out.println("\nĐĂNG NHẬP THÀNH CÔNG!");
         System.out.println("Chào mừng " + username + ". Bạn có thể thực hiện những công việc sau: ");
         menu.SuccessfulLoginMenu();
         int taskNumber = sc.nextInt();
@@ -84,19 +85,19 @@ public class Controller {
         switch (taskNumber) {
             case 1:
                 // Thay đổi username
-                System.out.println("Thay đổi username");
+                System.out.println("\nThay đổi username");
                 updateUsername();
                 break;
 
             case 2:
                 // Thay đổi email
-                System.out.println("Thay đổi email");
+                System.out.println("\nThay đổi email");
                 updateEmail();
                 break;
 
             case 3:
                 // Thay đổi mật khẩu
-                System.out.println("Thay đổi mật khẩu");
+                System.out.println("\nThay đổi mật khẩu");
                 updatePassword();
                 break;
 
@@ -110,7 +111,7 @@ public class Controller {
                 break;
 
             default:
-                System.out.println("Không có lựa chọn này");
+                System.out.println("Không có lựa chọn này!");
                 break;
         }
     }
@@ -220,7 +221,7 @@ public class Controller {
 
         while (!isValidNewEmail) {
             try {
-                System.out.println("Mời nhập username mới: ");
+                System.out.println("Mời nhập email mới: ");
                 newEmail = validation.validateEmail(sc.nextLine());
 
                 // Kiểm tra đúng username hiện tại mới cho thay đổi
@@ -281,12 +282,12 @@ public class Controller {
                             System.out.println("Vui lòng nhập lại mật khẩu mới!");
                         }
                     }
-                }
 
-                user.setPassword(newPassword);
-                password = newPassword;
-                System.out.println("Thay đổi mật khẩu thành công! Vui lòng đăng nhập lại.");
-                login();
+                    user.setPassword(newPassword);
+                    password = newPassword;
+                    System.out.println("Thay đổi mật khẩu thành công! Vui lòng đăng nhập lại.");
+                    login();
+                }
             }
 
             System.out.println((!isRightOldPass) ? "Bạn đã nhập sai mật khẩu cũ. Vui lòng nhập lại." : null);

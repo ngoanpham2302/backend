@@ -2,7 +2,7 @@ package com.company;
 
 public class Menu {
     public void mainMenu() {
-        System.out.println("--- ĐĂNG NHẬP | ĐĂNG KÍ ---");
+        System.out.println("\n--- ĐĂNG NHẬP | ĐĂNG KÍ ---");
         System.out.println("Xin mời lựa chọn: ");
         System.out.println("1 - Đăng nhập");
         System.out.println("2 - Đăng ký");
