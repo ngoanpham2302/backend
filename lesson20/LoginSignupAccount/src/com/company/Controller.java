@@ -40,7 +40,6 @@ public class Controller {
                 System.out.println("Không có lựa chọn này!");
                 break;
         }
-
     }
 
     // Đăng nhập
@@ -195,8 +194,9 @@ public class Controller {
                 if (username.equals(curUser.getUsername())) {
                     // Kiểm tra xem newUsername có bị trùng với tất cả các username đang tồn tại không
                     try {
-                        for (User user: userList) {
-                            if (newUsername.equals(user.getUsername())) throw new RuntimeException("Username đã tồn tại trên hệ thống!");
+                        for (User user : userList) {
+                            if (newUsername.equals(user.getUsername()))
+                                throw new RuntimeException("Username đã tồn tại trên hệ thống!");
                         }
 
                         isValidNewUsername = true;
@@ -229,7 +229,8 @@ public class Controller {
                     if (username.equals(curUser.getUsername())) {
                         // Kiểm tra xem newEmail có bị trùng với tất cả các email đang tồn tại không
                         for (User user : userList) {
-                            if (newEmail.equals(user.getEmail())) throw new RuntimeException("Email đã tồn tại trên hệ thống!");
+                            if (newEmail.equals(user.getEmail()))
+                                throw new RuntimeException("Email đã tồn tại trên hệ thống!");
                         }
 
                         isValidNewEmail = true;
@@ -309,7 +310,8 @@ public class Controller {
 
                 // Kiểm tra email/username có tồn tại trên hệ thống chưa
                 for (User user : userList) {
-                    if (user.getUsername().equals(newUsername)) throw new RuntimeException("Username đã tồn tại trên hệ thống!");
+                    if (user.getUsername().equals(newUsername))
+                        throw new RuntimeException("Username đã tồn tại trên hệ thống!");
                     if (user.getEmail().equals(newEmail)) throw new RuntimeException("Email đã tồn tại trên hệ thống!");
                 }
 
