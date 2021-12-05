@@ -16,8 +16,7 @@ public class Validation {
         if (password.matches(PASSWORD_REGEX)) {
             return password;
         } else {
-            throw new RuntimeException("Mật khẩu không hợp lệ! Mật khẩu dài từ 7 đến 15 ký tự, chứa ít nhất 1 ký tự in hoa, 1 ký tự đặc biệt.");
+            throw new RuntimeException("Mật khẩu không hợp lệ! Mật khẩu dài từ 7 đến 15 ký tự, chứa ít nhất 1 ký tự in hoa, 1 ký tự số, 1 ký tự đặc biệt @#$%^&+=");
         }
     }
-
 }

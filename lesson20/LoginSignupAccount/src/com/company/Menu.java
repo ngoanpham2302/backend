@@ -9,15 +9,15 @@ public class Menu {
         System.out.println("0 - Thoát chương trình");
     }
 
-    public void failedloginMenu() {
-        System.out.println("Đăng nhập thất bại. Vui lòng lựa chọn: ");
+    public void failedLoginMenu() {
+        System.out.println("\nĐăng nhập thất bại. Vui lòng lựa chọn: ");
         System.out.println("1 - Đăng nhập lại");
         System.out.println("2 - Quên mật khẩu");
         System.out.println("0 - Thoát chương trình");
     }
 
     public void SuccessfulLoginMenu() {
-        System.out.println("Xin mời lựa chọn: ");
+        System.out.println("\nXin mời lựa chọn: ");
         System.out.println("1 - Thay đổi username");
         System.out.println("2 - Thay đổi email");
         System.out.println("3 - Thay đổi mật khẩu");
