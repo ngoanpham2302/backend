@@ -309,9 +309,13 @@ public class Controller {
 
                 // Kiểm tra email/username có tồn tại trên hệ thống chưa
                 for (User user : userList) {
-                    if (user.getUsername().equals(newUsername))
+                    if (user.getUsername().equals(newUsername)) {
                         throw new RuntimeException("Username đã tồn tại trên hệ thống!");
-                    if (user.getEmail().equals(newEmail)) throw new RuntimeException("Email đã tồn tại trên hệ thống!");
+                    }
+
+                    if (user.getEmail().equals(newEmail)) {
+                        throw new RuntimeException("Email đã tồn tại trên hệ thống!");
+                    }
                 }
 
                 isValidInfo = true;

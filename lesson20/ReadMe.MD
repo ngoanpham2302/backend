@@ -40,5 +40,39 @@ Khi mới bắt đầu chương trình, người dùng có các lựa chọn:
 
 Để tạo tài khoản mới cần nhập username, email, password. Trong đó:
 
-- Email phải chuẩn (Sử dụng regex), chưa tồn tại trong List
-- Password dài từ 7 đến 15 ký tự, chứa ít nhất 1 ký tự in hoa, 1 ký tự số, 1 ký tự đặc biệt
+- Email phải chuẩn (Sử dụng regex), email và username chưa tồn tại trong List
+- Password dài từ 7 đến 15 ký tự, chứa ít nhất 1 ký tự in hoa, 1 ký tự số, 1 ký tự đặc biệt @#$%^&+=
+
+---
+
+## App Images
+
+0. Màn hình chính
+
+- ![01-get-all-jobs](./app-img/01-main.PNG)
+
+---
+
+1. Đăng nhập, thay đổi username
+
+- ![02-login-success](./app-img/02-login-success.PNG)
+- ![03-change-user-name](./app-img/03-change-user-name.PNG)
+
+---
+
+2. Đăng nhập thất bại
+
+- ![04-login-fail](./app-img/04-login-fail.PNG)
+
+---
+
+3. Quên mật khẩu
+
+- ![04-forgot-password](./app-img/04-forgot-password.PNG)
+
+---
+
+4. Đăng ký
+
+- ![05-signup](./app-img/05-signup.PNG)
+- ![05-signup-fail](./app-img/05-signup-fail.PNG)
